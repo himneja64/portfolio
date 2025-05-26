@@ -100,6 +100,7 @@ header .inner .title p {
   position: relative;
   height: 100vh;
   width: 100%;
+	overflow-x: hidden;
 }
 .int_img { position: absolute; transition: .3s;}
 .poligon1 { top: -10px; left: -30px; width: 25%; rotate: -5deg; }
@@ -294,11 +295,8 @@ nav .gnb .link .doc li a img {
 	}
 }
 @media only screen and (max-width: 360px){
-	nav {
-		width: 100%;
-	}
 	nav .gnb .menu_btn {
-		left: -60px;
+		left: -65px;
 	}
 	nav .gnb .link .doc {
 		flex-direction: column;
@@ -384,7 +382,6 @@ nav .gnb .link .doc li a img {
 #career .content ul li .subtxt details summary {
 	display: block;
 	position: relative;
-	padding: 2px;
 	box-sizing: border-box;
 	list-style-type: none;
 	cursor: pointer;
@@ -408,7 +405,17 @@ nav .gnb .link .doc li a img {
 	transform: rotate(90deg);
 }
 
-#career .content ul li .subtxt details > p {
+#career .content ul li .subtxt details .sumbox {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+}
+
+#career .content ul li .subtxt details .sumbox > p {
 	display:-webkit-box;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -417,13 +424,12 @@ nav .gnb .link .doc li a img {
 	line-clamp:2;
 	-webkit-box-orient:vertical;
 	height: auto;
-	line-height: 20px;
-	margin-bottom: 12px;
+	line-height: 1.8;
 	font-family: "Pretendard Variable", sans-serif;
 	font-size: clamp(14px, 1.2vw, 20px);
 	font-weight: 200;
 }
-#career .content ul li .subtxt details > p > span {
+#career .content ul li .subtxt details .sumbox > p > span {
 	font-weight: 400;
 }
 
@@ -701,8 +707,9 @@ nav .gnb .link .doc li a img {
 }
 #project .content .flex-wrap .img-inner > span {
 	position: absolute;
-	top: -30px;
-	right: 0;
+	z-index: 6;
+	top: 20px;
+	right: 20px;
 	font-size: clamp(16px, 2.5vw, 20px);
 	font-weight: 200;
 }
@@ -770,10 +777,12 @@ nav .gnb .link .doc li a img {
 #project .content .flex-wrap .img-inner .subtext {
 	position: absolute;
 	z-index: 6;
-	bottom: -50px;
+	bottom: 35%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 10px 20px;
 	font-size: clamp(14px, 1vw, 18px);
 	font-weight: 400;
-	padding: 10px 20px;
 	box-sizing: border-box;
 	border-radius: 10px;
 	border: 1px solid #FEF8F2;
@@ -783,35 +792,35 @@ nav .gnb .link .doc li a img {
 }
 #project .content .flex-wrap .prj1 .img {
 	background-position: center;
-	background-image: url(../img/pro_img1.jpg);
+	background-image: url(../img/pro_img2.jpg);
 }
 #project .content .flex-wrap .prj2 {
 	width: 50%;
 }
 #project .content .flex-wrap .prj2 .img {
 	background-position: center;
-	background-image: url(../img/pro_img2.jpg);
+	background-image: url(../img/pro_img3.png);
 }
 #project .content .flex-wrap .prj3 {
 	width: 50%;
 }
 #project .content .flex-wrap .prj3 .img {
 	background-position: center;
-	background-image: url(../img/pro_img3.png);
+	background-image: url(../img/pro_img4.jpg);
 }
 #project .content .flex-wrap .prj4 {
 	width: 50%;
 }
 #project .content .flex-wrap .prj4 .img {
 	background-position: center;
-	background-image: url(../img/pro_img4.jpg);
+	background-image: url(../img/pro_img5.jpg);
 }
 #project .content .flex-wrap .prj5 {
 	width: 50%;
 }
 #project .content .flex-wrap .prj5 .img {
 	background-position: center;
-	background-image: url(../img/pro_img5.jpg);
+	background-image: url(../img/pro_img1.jpg);
 }
 #project > img {
 	position: absolute;
@@ -832,11 +841,6 @@ nav .gnb .link .doc li a img {
 	}
 	#project .content .flex-wrap .img-inner .img-wrap {
 		height: 60vh;
-	}
-}
-@media only screen and (max-width: 1200px) {
-	#project .content {
-		padding: 0 30px;
 	}
 }
 @media only screen and (max-width: 767px) {
@@ -898,6 +902,7 @@ nav .gnb .link .doc li a img {
 #skill .content .swiper-container {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 
 #skill .content .swiper-container .swiper-slide {
